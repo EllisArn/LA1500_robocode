@@ -24,30 +24,28 @@ Am Anfang des Kampfes geht mein Roboter in den Normalzustand. Im Normalzustand d
 <br>
 Phase 1:
 ```java
-if (Start == 0)
-			{
-				out.println("Just being random");
-				gunsHeading = gunHeading;
-				rd = new Random();
-				int turnAngle = rd.nextInt(1, 360);
-				turnTo(turnAngle);
-				turnGunTo(gunsHeading);
-				int field = (fieldHeight + fieldWidth) / 2;
-				int fromField = field / 10;
-				int toField = field / 3;
-				rd = new Random();
-				ahead(rd.nextInt(fromField, toField));
-				turnGunTo(gunsHeading);
-				turnGunRight(360);
+if (Start == 0) {
+	out.println("Just being random");
+	gunsHeading = gunHeading;
+	rd = new Random();
+	int turnAngle = rd.nextInt(1, 360);
+	turnTo(turnAngle);
+	turnGunTo(gunsHeading);
+	int field = (fieldHeight + fieldWidth) / 2;
+	int fromField = field / 10;
+	int toField = field / 3;
+	rd = new Random();
+	ahead(rd.nextInt(fromField, toField));
+	turnGunTo(gunsHeading);
+	turnGunRight(360);
 }
 ```
 <br>
 Wand Abprall:
 ```java
 public void onHitWall() {
-
-		turnTo(-hitWallBearing);
-		Start = 0;
+	turnTo(-hitWallBearing);
+	Start = 0;
 }	
 ```
 
@@ -57,35 +55,33 @@ In der Phase 2 begibt sich der Roboter in den Kampf- bzw. Fokussiermodus. Er dre
 <br>
 Phase 2:
 ```java
-else if (Start == 1)
-			{
-				out.println("Focusing");
-				gunsHeading = gunHeading;
-				turnGunTo(gunsHeading);
-				int field = (fieldHeight + fieldWidth) / 2;
-				int fromField = field / 10;
-				int toField = field / 3;
-				rd = new Random();
-				ahead(rd.nextInt(fromField, toField));
-				turnGunTo(gunsHeading);
-				turnGunRight(360);
+else if (Start == 1) {
+	out.println("Focusing");
+	gunsHeading = gunHeading;
+	turnGunTo(gunsHeading);
+	int field = (fieldHeight + fieldWidth) / 2;
+	int fromField = field / 10;
+	int toField = field / 3;
+	rd = new Random();
+	ahead(rd.nextInt(fromField, toField));
+	turnGunTo(gunsHeading);
+	turnGunRight(360);
 }
 ```
 <br>
 Fokus:
 ```java
 public void onScannedRobot() {
-	
-		turnGunTo(scannedAngle);
-		Start = 1;
-		if (scannedDistance < 400)
-		{
-			fire(3);
-		}
-		else
-		{
-			fire(1);
-		}
+	turnGunTo(scannedAngle);
+	Start = 1;
+	if (scannedDistance < 400)
+	{
+		fire(3);
+	}
+	else
+	{
+		fire(1);
+	}
 }
 ```
 Was speziell an meinem Roboter ist, ist seine Rache. sobald mein Roboter getroffen wurde, Schiesst er dorthin zurück, von wo der Schuss kam. Zusätzlich geht er, solange er den Gegner nicht sieht, in die Phase 1 zurück. Das war ziemlich schwer gut zu implementieren und ich habe diesen Code mehrfach komplett umgeschrieben.
@@ -93,19 +89,18 @@ Was speziell an meinem Roboter ist, ist seine Rache. sobald mein Roboter getroff
 Rache:
 ```java
 public void onHitByBullet() {
-
-		int angle = hitByBulletAngle;
-		if (scannedDistance < 400)
-		{
-			turnGunTo(angle);
-			fire(3);
-		}
-		else
-		{
-			turnGunTo(angle);
-			fire(1);
-		}
-		Start = 0;
+	int angle = hitByBulletAngle;
+	if (scannedDistance < 400)
+	{
+		turnGunTo(angle);
+		fire(3);
+	}
+	else
+	{
+		turnGunTo(angle);
+		fire(1);
+	}
+	Start = 0;
 }
 ```
 
