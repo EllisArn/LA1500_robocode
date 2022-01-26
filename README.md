@@ -15,7 +15,7 @@ Wir haben JuniorRobots programmiert, da wir noch nie mit Java und vorallem noch 
 
 ### Strategie meines Roboters
 
-Mein Roboter bewegt sich im Normalzustand ziemlich zufällig, damit er nicht so leicht getroffen wird. Wenn er jemanden sieht (scannt), dann geht er in die Kampf-Phase über. In der Kampf-Phase bewegt er sich zwar immernoch etwas zufällig, aber er fokussiert regelrecht
+Mein Roboter bewegt sich im Normalzustand ziemlich zufällig, damit er nicht so leicht getroffen wird. Wenn er jemanden sieht (scannt), dann geht er in die Kampf-Phase über. In der Kampf-Phase bewegt er sich zwar immernoch etwas zufällig, aber er fokussiert regelrecht den Roboter, den er gescannt hat.
 
 ## Verifikation
 
