@@ -38,7 +38,7 @@ https://user-images.githubusercontent.com/89130718/151145824-380374b2-51cf-4eb4-
 
 ## Verifikation
 
-
+Ich habe mein Portfolio einem Klassenkameraden gezeigt und er hat mir gesagt, dass er die Strategie meines Roboters verstanden hat.
 
 ## Reflexion & VBV
 
