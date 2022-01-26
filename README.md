@@ -21,12 +21,93 @@ Wir haben JuniorRobots programmiert, da wir noch nie mit Java und vorallem noch 
 ### Phase 1
 
 Am Anfang des Kampfes geht mein Roboter in den Normalzustand. Im Normalzustand dreht sich mein Roboter in eine zufällige Richtung, die ich davor immer neu generiere. Nachdem er das gemacht hat, berechnet er die durchschnittliche Länge der Höhe und der Breite des Spielfelds. Mit dem Durchschnitt berechnet er eine zufällige Zahl zwischen einem Zehntel und einem Drittel des Durchschnitts. Diese Zahl ist dann die Länge der Strecke, die er nach Vorne fährt. Und nachdem er angekommen ist, scannt er einmal seine gesamte 360°-Umgebung. Wenn er gegen eine Wand fährt, dann prallt er sozusagen von der Wand ab. Wenn er jemanden sieht, dann geht er in Phase 2 über. Wenn nicht, dann bleibt er in Phase 1.
+<br>
+Phase 1:
+```java
+if (Start == 0)
+			{
+				out.println("Just being random");
+				gunsHeading = gunHeading;
+				rd = new Random();
+				int turnAngle = rd.nextInt(1, 360);
+				turnTo(turnAngle);
+				turnGunTo(gunsHeading);
+				int field = (fieldHeight + fieldWidth) / 2;
+				int fromField = field / 10;
+				int toField = field / 3;
+				rd = new Random();
+				ahead(rd.nextInt(fromField, toField));
+				turnGunTo(gunsHeading);
+				turnGunRight(360);
+}
+```
+<br>
+Wand Abprall:
+```java
+public void onHitWall() {
+
+		turnTo(-hitWallBearing);
+		Start = 0;
+}	
+```
 
 ### Phase 2
 
 In der Phase 2 begibt sich der Roboter in den Kampf- bzw. Fokussiermodus. Er dreht sich nicht mehr, aber er fähr immernoch auf einer zufälligen Strecke, die vorher berechnet wurde, um auszuweichen und um seine Zielgenauigkeit zu verbessern. Also eigentlich fährt er in Schritten nach Vorne und schiesst durchgehend auf den Roboter, den er fokussiert, solange er einen Roboter sieht.
 <br>
+Phase 2:
+```java
+else if (Start == 1)
+			{
+				out.println("Focusing");
+				gunsHeading = gunHeading;
+				turnGunTo(gunsHeading);
+				int field = (fieldHeight + fieldWidth) / 2;
+				int fromField = field / 10;
+				int toField = field / 3;
+				rd = new Random();
+				ahead(rd.nextInt(fromField, toField));
+				turnGunTo(gunsHeading);
+				turnGunRight(360);
+}
+```
+<br>
+Fokus:
+```java
+public void onScannedRobot() {
+	
+		turnGunTo(scannedAngle);
+		Start = 1;
+		if (scannedDistance < 400)
+		{
+			fire(3);
+		}
+		else
+		{
+			fire(1);
+		}
+}
+```
 Was speziell an meinem Roboter ist, ist seine Rache. sobald mein Roboter getroffen wurde, Schiesst er dorthin zurück, von wo der Schuss kam. Zusätzlich geht er, solange er den Gegner nicht sieht, in die Phase 1 zurück. Das war ziemlich schwer gut zu implementieren und ich habe diesen Code mehrfach komplett umgeschrieben.
+<br>
+Rache:
+```java
+public void onHitByBullet() {
+
+		int angle = hitByBulletAngle;
+		if (scannedDistance < 400)
+		{
+			turnGunTo(angle);
+			fire(3);
+		}
+		else
+		{
+			turnGunTo(angle);
+			fire(1);
+		}
+		Start = 0;
+}
+```
 
 ### Video
 
