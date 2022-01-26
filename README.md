@@ -28,6 +28,14 @@ In der Phase 2 begibt sich der Roboter in den Kampf- bzw. Fokussiermodus. Er dre
 <br>
 Was speziell an meinem Roboter ist, ist seine Rache. sobald mein Roboter getroffen wurde, Schiesst er dorthin zurück, von wo der Schuss kam. Zusätzlich geht er, solange er den Gegner nicht sieht, in die Phase 1 zurück. Das war ziemlich schwer gut zu implementieren und ich habe diesen Code mehrfach komplett umgeschrieben.
 
+### Video
+
+Ich habe in Video einen Gegner genommen, der auf seinen gegner zustürmt und erst ernn er d^seinen Gegner trifft, schiesst.
+<br>
+Mein Roboter ist der Schwarze.
+
+https://user-images.githubusercontent.com/89130718/151145824-380374b2-51cf-4eb4-8643-810a3e6ce037.mp4
+
 ## Verifikation
 
 
