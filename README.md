@@ -2,7 +2,7 @@
 
 ## Ausgangslage
 
-Wir haben während drei Wochen ein klassenübergreifendes robocode-Turnier veranstaltet. Robocode ist ein Open-Source-Programmierspiel, bei dem virtuelle Roboter auf einem Spielfeld gegeneinander kämpfen. In robocode kann man seinen eigenen Roboter programmieren. Das geht mit Funktionen, die nur ausgeführt werden, wenn eine bestimmte Bedingung erfüllt ist. Z.B: Wenn der Roboter getroffen wird, dann macht der Roboter etwas. Und mit einer Funktion, die jede Runde ausgeführ wird. In dieser Funktion ist normalerweise der Code, der den Roboter bewegt und der Code, der die Umgebung scannt. Im Anhang befindet sich zu einem eine .jar Datei, die man in robocode importieren kann und eine .java Datei, in der einfach nur der Code steht.
+Wir haben während drei Wochen ein klassenübergreifendes robocode-Turnier veranstaltet. Robocode ist ein Open-Source-Programmierspiel, bei dem virtuelle Roboter auf einem Spielfeld gegeneinander kämpfen. In robocode kann man seinen eigenen Roboter programmieren. Das geht mit Funktionen, die nur ausgeführt werden, wenn eine bestimmte Bedingung erfüllt ist. Z.B: Wenn der Roboter getroffen wird, dann macht der Roboter etwas. Und mit einer Funktion, die jede Runde ausgeführ wird. In dieser Funktion ist normalerweise der Code, der den Roboter bewegt und der Code, der die Umgebung scannt. Im Anhang befindet sich zu einem eine .jar Datei, die man in robocode importieren kann und eine .java Datei, in der einfach nur der Code steht. API: https://robocode.sourceforge.io/docs/robocode/robocode/JuniorRobot.html
 
 ## Ziel
 
