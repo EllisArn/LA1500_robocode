@@ -11,7 +11,6 @@ public class TheFocusBot extends JuniorRobot
 	public void run() {
 
 		setColors(black, white, green, red, green);
-		// Sets these colors (robot parts): body, gun, radar, bullet, scan_arc
 		
 		while(true) {
 			if (Start == 0)
