@@ -40,7 +40,7 @@ if (Start == 0) {
 	turnGunRight(360);
 }
 ```
-<br>
+
 Wand Abprall:
 ```java
 public void onHitWall() {
@@ -52,7 +52,7 @@ public void onHitWall() {
 ### Phase 2
 
 In der Phase 2 begibt sich der Roboter in den Kampf- bzw. Fokussiermodus. Er dreht sich nicht mehr, aber er fähr immernoch auf einer zufälligen Strecke, die vorher berechnet wurde, um auszuweichen und um seine Zielgenauigkeit zu verbessern. Also eigentlich fährt er in Schritten nach Vorne und schiesst durchgehend auf den Roboter, den er fokussiert, solange er einen Roboter sieht.
-<br>
+
 Phase 2:
 ```java
 else if (Start == 1) {
@@ -68,7 +68,7 @@ else if (Start == 1) {
 	turnGunRight(360);
 }
 ```
-<br>
+
 Fokus:
 ```java
 public void onScannedRobot() {
@@ -85,7 +85,7 @@ public void onScannedRobot() {
 }
 ```
 Was speziell an meinem Roboter ist, ist seine Rache. sobald mein Roboter getroffen wurde, Schiesst er dorthin zurück, von wo der Schuss kam. Zusätzlich geht er, solange er den Gegner nicht sieht, in die Phase 1 zurück. Das war ziemlich schwer gut zu implementieren und ich habe diesen Code mehrfach komplett umgeschrieben.
-<br>
+
 Rache:
 ```java
 public void onHitByBullet() {
