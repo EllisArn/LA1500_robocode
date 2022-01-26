@@ -6,7 +6,12 @@ Wir haben während drei Wochen ein klassenübergreifendes robocode-Turnier veran
 
 ## Ziel
 
+Das Ziel dieses Portfolios ist, dem Leser die Strategie meines Roboters zu erklären.
+
 ## Roboter
+
+In robocode gibt es drei verschiedene Arten von Robotern. Die JuniorRobots, die auf eine Art "vereinfacht" wurden, die Robots oder auch die "normalen" Roboter und die AdvancedRobots, die sehr kompliziert sind und auch Vorhersagen treffen können.
+Wir haben JuniorRobots programmiert, da wir noch nie mit Java und vorallem noch nie mit robocode gearbeitet haben.
 
 ## Reflexion & VBV
 
